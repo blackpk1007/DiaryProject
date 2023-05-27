@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <title>TimeTrove</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-32x32.png">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://kit.fontawesome.com/fe66fff399.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script type="text/javascript">
+        //tab 화면 전환
+        $(document).ready(function(){
+            //메뉴 탭
+            $('.tab-content li').click(function(){
+                var tabId = $(this).data("tab");
+
+                $('.tab-content li').removeClass('current');
+                $('.menu-content').removeClass('current');
+
+                $(this).addClass('current');
+                $("#"+tabId).addClass('current');            
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <div id="contentwrap">
+        <div class="left-menu">
+            <img class="mainlogo" src="../img/logo11.png" alt="Diary">
+            <ul class="tab-content">
+                <li class="menuTab current" data-tab="menu-1"><i class="fa-regular fa-calendar-check"></i> 일정</li>
+                <!--
+                <li><i class="fa-solid fa-clock"></i> 일정</li>
+                <li><i class="fa-regular fa-clock"></i> 일정</li>
+                -->
+                <li class="menuTab" data-tab="menu-2"><i class="fa-solid fa-seedling"></i> Diary</li>
+                <!--
+                <li><i class="fa-brands fa-reddit-alien"></i></i> 친구 목록</li>
+                -->
+                <li class="menuTab" data-tab="menu-3"><i class="fa-solid fa-paw"></i> 친구 목록</li>
+                <li class="menuTab" data-tab="menu-4"><i class="fa-solid fa-circle-user"></i> 내 정보</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div id="menu-1" class="menu-content current">일정</div>
+            <div id="menu-2" class="menu-content">Diary</div>
+            <div id="menu-3" class="menu-content">친구 목록</div>
+            <div id="menu-4" class="menu-content">내 정보</div>
+        </div>
+    </div>
+</body>
+</html>
